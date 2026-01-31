@@ -1,0 +1,27 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    // Users can read their own user data, but not others'
+    match /users/{userId} {
+      allow read, update: if request.auth.uid == userId;
+      allow create: if request.auth.uid != null;
+    }
+
+    // Entrepreneurs can create proposals, anyone logged in can read them
+    match /proposals/{proposalId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && request.resource.data.entrepreneurId == request.auth.uid;
+      // Add update/delete rules later, e.g., only the owner can delete
+    }
+
+    // Investors can create interest posts, anyone logged in can read them
+    match /investorInterests/{interestId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null && request.resource.data.investorId == request.auth.uid;
+    }
+    
+    // Add similar rules for loanOffers and advisorPosts
+    // ...
+  }
+}
