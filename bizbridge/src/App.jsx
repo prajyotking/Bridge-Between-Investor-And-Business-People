@@ -12,7 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <div className="mainClr min-h-screen">
       <Navbar />
       <main className="container mx-auto p-4">
         <Routes>

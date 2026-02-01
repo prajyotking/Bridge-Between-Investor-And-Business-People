@@ -75,7 +75,7 @@ const InvestorDashboard = () => {
             <input type="text" value={interestArea} onChange={(e) => setInterestArea(e.target.value)} className="w-full mt-1 p-2 border rounded"/>
           </div>
           <div>
-            <label className="block text-sm font-medium">Maximum Investment ($)</label>
+            <label className="block text-sm font-medium">Maximum Investment (₹)</label>
             <input type="number" value={maxInvestment} onChange={(e) => setMaxInvestment(e.target.value)} className="w-full mt-1 p-2 border rounded"/>
           </div>
           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Post Proposal</button>
@@ -90,7 +90,7 @@ const InvestorDashboard = () => {
             {proposals.length > 0 ? proposals.map(prop => (
               <div key={prop.id} className="p-4 border rounded-lg bg-gray-50">
                 <h3 className="font-bold text-lg text-blue-800">{prop.title}</h3>
-                <p className="font-semibold text-green-600">Funding Needed: ${prop.fundingNeeded.toLocaleString()}</p>
+                <p className="font-semibold text-green-600">Funding Needed: ₹{prop.fundingNeeded.toLocaleString()}</p>
                 <p className="text-sm text-gray-700 mt-2">{prop.description}</p>
                 <p className="text-xs text-gray-500 mt-3">Posted by: {prop.entrepreneurName}</p>
               </div>

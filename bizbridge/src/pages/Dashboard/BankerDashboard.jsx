@@ -60,7 +60,7 @@ const BankerDashboard = () => {
             <input type="number" step="0.01" value={interestRate} onChange={(e) => setInterestRate(e.target.value)} className="w-full mt-1 p-2 border rounded"/>
           </div>
           <div>
-            <label className="block text-sm font-medium">Maximum Loan Amount ($)</label>
+            <label className="block text-sm font-medium">Maximum Loan Amount (₹)</label>
             <input type="number" value={maxAmount} onChange={(e) => setMaxAmount(e.target.value)} className="w-full mt-1 p-2 border rounded"/>
           </div>
           <div>

@@ -71,7 +71,7 @@ const EntrepreneurDashboard = () => {
             <textarea value={ideaDescription} onChange={(e) => setIdeaDescription(e.target.value)} className="w-full mt-1 p-2 border rounded" rows="4"></textarea>
           </div>
           <div>
-            <label className="block text-sm font-medium">Funding Needed ($)</label>
+            <label className="block text-sm font-medium">Funding Needed (₹)</label>
             <input type="number" value={fundingNeeded} onChange={(e) => setFundingNeeded(e.target.value)} className="w-full mt-1 p-2 border rounded"/>
           </div>
           <button type="submit" className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Post Idea</button>
@@ -86,7 +86,7 @@ const EntrepreneurDashboard = () => {
             {myIdeas.length > 0 ? myIdeas.map(idea => (
               <div key={idea.id} className="p-4 border rounded">
                 <h3 className="font-bold">{idea.title}</h3>
-                <p>Funding: ${idea.fundingNeeded.toLocaleString()}</p>
+                <p>Funding: ₹{idea.fundingNeeded.toLocaleString()}</p>
                 <p className="text-sm text-gray-600">{idea.description.substring(0, 100)}...</p>
               </div>
             )) : <p>You haven't posted any ideas yet.</p>}

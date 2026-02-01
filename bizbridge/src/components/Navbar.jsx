@@ -22,11 +22,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800 p-4 shadow-lg">
+    <nav className="nav  p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-white text-2xl font-bold">VentureConnect</Link>
+        <Link to="/" className="text-white text-2xl font-bold">BizBridge</Link>
         <div className="flex items-center space-x-4">
-          <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
+          <Link to="/" className="text-gray-300 hover:text-white font-bold">Home</Link>
           {user ? (
             <>
               <Link to="/dashboard" className="text-gray-300 hover:text-white">Dashboard</Link>
@@ -37,8 +37,8 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/login" className="text-gray-300 hover:text-white">Login</Link>
-              <Link to="/register" className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
+              <Link to="/login" className="text-gray-300 hover:text-white font-bold">Login</Link>
+              <Link to="/register" className="regBtn text-white py-2 px-4 rounded">
                 Register
               </Link>
             </>
